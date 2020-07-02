@@ -1,0 +1,25 @@
+ALGORITHM phrase
+VAR
+   sum_k,sum_w,sum_v: INTEGER:=0;
+    str:STRING;
+    i: INTEGER:=0;
+    j:INTEGER;
+BEGIN
+write("write the sentence :");
+REPEAT
+    Read(str[i]);
+    i:=i+1;
+UNTIL (str[i]='.')
+FOR J FROM 0 TO str.length-1 STEP 1  DO
+ IF (str[j]<> ' ') THEN
+  sum_k:=sum_k+1;
+ END_IF
+ IF (str[j]= ' ') THEN
+   sum_w:=sum_w+1;
+ END_IF
+ IF (((str[j] = 'a')Or(str[j] = 'o')Or(str[j] = 'u')Or(str[j] = 'e')Or(str[j] = 'i')Or(str[j] = 'y')) THEN
+       sum_v := sum_v + 1 ;
+ END_IF
+END_FOR
+    Write("the length of the sentence is "+ sum_k +"the number of it's words is :"+sum_w+" and the number of voyels is "+sum_v);
+END
